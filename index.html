@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Notifications page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h2>
+        <span>Notifications</span>
+        <span id="notification-number">3</span>
+      </h2>
+      <a href="#">Mark all as read</a>
+    </div>
+
+    <div class="main">
+
+      <div class="notification new-notification">
+        <img src="./assets/images/avatar-mark-webber.webp" alt="profile-picture">
+        <div class="text">
+          <div class="main-text new">
+            <a href="#" class="name">Mark Webber</a>
+            reacted to your recent post
+            <a href="#" class="action">My first tournament today!</a>
+          </div>
+          <div class="time">1m ago</div>
+        </div>
+      </div>
+
+      <div class="notification new-notification">
+        <img src="./assets/images/avatar-angela-gray.webp" alt="profile-picture">
+        <div class="text">
+          <div class="main-text new">
+            <a href="#" class="name">Angela Gray</a>
+            followed you
+          </div>
+          <div class="time">5m ago</div>
+        </div>
+      </div>
+
+      <div class="notification new-notification">
+        <img src="./assets/images/avatar-jacob-thompson.webp" alt="profile-picture">
+        <div class="text">
+          <div class="main-text new">
+            <a href="#" class="name">Jacob Thompson</a>
+            has joined your group
+            <span class="action"><a href="#">Chess Club</a></span>
+          </div>
+          <div class="time">1 day ago</div>
+        </div>
+      </div>
+
+      <div class="notification">
+        <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="profile-picture">
+        <div class="text">
+          <div class="main-text">
+            <a href="#" class="name">Rizky Hasanuddin</a>
+          sent you a private message
+          </div>
+          <div class="time">5 days ago</div>
+
+          <div class="msg">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="notification">
+        <img src="./assets/images/avatar-kimberly-smith.webp" alt="profile-picture">
+        <div class="text">
+          <div class="main-text">
+            <a href="#" class="name">Kimberly Smith</a>
+          commented on your picture
+          </div>
+          <img src="./assets/images/image-chess.webp" alt="kimberly-img-chess">
+          <div class="time">1 week ago</div>
+        </div>
+      </div>
+
+      <div class="notification">
+        <img src="./assets/images/avatar-nathan-peterson.webp" alt="profile-picture">
+        <div class="text">
+          <div class="main-text">
+            <a href="#" class="name">Nathan Peterson</a>
+            reacted to your recent post
+            <a href="#" class="action">
+            5 end-game strategies to increase your win rate
+            </a>
+          </div>
+          <div class="time">2 weeks ago</div>
+        </div>
+      </div>
+
+      <div class="notification">
+        <img src="./assets/images/avatar-anna-kim.webp" alt="profile-picture">
+        <div class="text">
+          <div class="main-text">
+            <a href="#" class="name">Anna Kim</a>
+            left the group
+            <span class="action"><a href="#">Chess Club</a></span>
+          </div>
+          <div class="time">2 weeks ago</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    
+
+  <script>
+    const newNumber = document.querySelector("#notification-number");
+    const markBtn = document.querySelector(".header a");
+    const newNotifications = document.querySelectorAll(".new-notification")
+    const newDots = document.querySelectorAll(".new");
+
+   
+
+    markBtn.addEventListener("click",()=>{
+      for(const x of newNotifications){
+        x.classList.remove("new-notification")
+      }
+      for(const x of newDots){
+        x.classList.remove("new")
+      }
+      newNumber.textContent = 0;
+    })
+  </script>
+</body>
+</html>

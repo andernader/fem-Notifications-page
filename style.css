@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+:root {
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --Grayish-blue: hsl(219, 14%, 63%);
+    --Dark-grayish-blue: hsl(219, 12%, 42%);
+    --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+/*
+    New Notification state classes :
+        .new-notifiction   // for the main div of the notification
+        .new   // to the div.main-text
+*/
+
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    color: var(--Dark-grayish-blue);
+    background-color: var(--Very-light-grayish-blue);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    background-color: var(--White);
+    min-width: 350px;
+    max-width: 750px;
+    border-radius: 7px;
+    margin: 3.5em auto;
+    padding: 2.5em;
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        padding: 1em;
+    }
+}
+
+img {
+    cursor: pointer;
+}
+
+a {
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
+    margin-left: .15em;
+}
+
+a:hover {
+    color: var(--Blue);
+}
+
+.header a {
+    font-weight: 500;
+    margin: 0;
+}
+
+.name {
+    color: var(--Very-dark-blue);
+    margin-right: .25em;
+    margin-left: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.header h2 {
+    font-weight: 800;
+}
+
+.header h2 > span {
+    color: var(--Very-dark-blue);
+}
+
+.header h2 #notification-number {
+    background-color: var(--Blue);
+    font-size: .65em;
+    color: var(--White);
+    padding: .25em .65em;
+    border-radius: 5px;
+    margin-left: .2em;
+}
+
+.header > span {
+    /*the mark all as read*/
+}
+
+/* main */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.notification {
+    background-color: var(--White);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 1em;
+}
+
+.new-notification{
+    background-color: var(--Very-light-grayish-blue);
+}
+
+.notification > img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+/**/
+.notification .new::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: red;
+    position: relative;
+    top: -50%;
+    margin-left: .25em;
+}/**/
+
+.notification .text {
+    width: 100%;
+}
+
+.notification .text img {
+    float: right;
+    width: 50px;
+}
+
+.notification .text img:hover {
+    box-shadow: 0 0 0 3px var(--Light-grayish-blue-2);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.notification .text .time {
+    margin-top: .25em;
+}
+
+.notification .main-text {
+    display: inline-block;
+}
+
+.notification .msg {
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid var(--Light-grayish-blue-2);
+    border-radius: 5px;
+}
+
+.notification .msg:hover{
+    background-color: var(--Light-grayish-blue-2);
+    cursor: pointer;
+}
